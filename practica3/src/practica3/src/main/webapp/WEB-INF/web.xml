@@ -1,0 +1,41 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+  <filter>
+  	<filter-name>FiltroIP</filter-name>
+  	<display-name>FiltroIP</display-name>
+  	<description></description>
+  	<filter-class>puntos.FiltroIP</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>FiltroIP</filter-name>
+  	<url-pattern>/*</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+  	<filter-name>FiltroIP</filter-name>
+  	<url-pattern>/FiltroIP</url-pattern>
+  </filter-mapping>
+  <servlet>
+  	<servlet-name>ServletRedirectFiltro</servlet-name>
+  	<display-name>ServletRedirectFiltro</display-name>
+  	<description></description>
+  	<servlet-class>puntos.ServletRedirectFiltro</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>ServletFiltro</servlet-name>
+  	<display-name>ServletFiltro</display-name>
+  	<description></description>
+  	<servlet-class>puntos.ServletFiltro</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>ServletRedirectFiltro</servlet-name>
+  	<url-pattern>/ServletRedirectFiltro</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ServletFiltro</servlet-name>
+  	<url-pattern>/ServletFiltro</url-pattern>
+  </servlet-mapping>
+</web-app>
