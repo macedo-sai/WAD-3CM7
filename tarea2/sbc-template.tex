@@ -1,0 +1,99 @@
+
+
+\documentclass[12pt]{article}
+
+
+\usepackage{sbc-template}
+
+\usepackage{graphicx,url}
+
+\usepackage[brazil]{babel}   
+%\usepackage[latin1]{inputenc}  
+\usepackage[utf8]{inputenc}  
+% UTF-8 encoding is recommended by ShareLaTex
+\usepackage{verbatim}
+\usepackage{listings}
+\usepackage{xcolor}
+
+\definecolor{verde}{rgb}{0,0.5,0}
+
+%para customizar o código (ver https://en.wikibooks.org/wiki/LaTeX/Source_Code_Listings)
+\lstset{language=C, %defina a linguagem usada no trabalho
+              belowcaptionskip=1\baselineskip,
+                breaklines=true,
+                frame=false,
+                xleftmargin=\parindent,
+                showstringspaces=false,
+                basicstyle=\footnotesize\ttfamily,
+                keywordstyle=\bfseries\color{green!40!black},
+                commentstyle=\itshape\color{purple!40!black},
+                identifierstyle=\color{blue},
+                stringstyle=\color{orange},
+                numbers=left,
+            }
+
+\sloppy
+
+\title{Estandar HTTP}
+
+\author{Macedo Borbolla Eduardo Sai \inst{1}Grupo: 3CM5 }
+
+
+\address{Escuela Superior de Cómputo  
+\inst{1} Web Application Development
+\email{\{mordrirsai\}@gmail.com}
+}
+
+\begin{document} 
+
+\maketitle
+
+\begin{resumo}
+ Este escrito tiene como objetivo desribir de manera general la funcionalidad, el formato  y la utilidad de los identificadores de recursos uniformes así como sus localizadores
+ y nombres dentro de una red de forma únivoca. 
+\end{resumo}
+
+
+\section{ URL, URI, URN: Cadenas de carácteres identificadoras}
+
+Para la mejor gestión de contenido por medio de la web se crearon distintas maneras de específicar los nombres o identificadores de recursos que nos permite nombrarlos sin
+probabilidad de poder confundir entre ellos o de dar una mal direccionamiento para accesar a alguno del cual ya sabemos su identidad, para poder resolver estas tres tareas
+fueron creados tres diferentes cadenas de caractéres que nos permiten dar un nombre a los recursos según lo que necesitamos saber de ellos.
+
+\begin{enumerate}
+\item{URN: Nombre de recurso uniforme.  }
+Nos permite definir de un espacio de nombres (un grupo de nombres o identificadores específicos) un nombre único para un recurso
+en un contexto dado, es decir, dentro de un ambito cómo es posible llamar a un objeto sin ser confundido.7
+
+Estructura:
+\begin{itemize}
+\item{URI-reference = URI / relative-ref}
+\item{absolute-URI  = scheme ":" hier-part [ "?" query ]}
+\end{itemize}
+
+El mismo identificador puede ser declarado en múltiples espacios de nombres.
+\item{URI: Identificador de recurso uniforme}
+\begin{itemize}
+\item{<scheme>:<scheme-specific-part>}
+Donde el componente scheme en las comunicaciones TCP/Ip sobre la internet esta dado por protocolos de comunicación compatibles con HTTP.
+\end{itemize}
+Permite dar una identificación única a un recurso ya sea por su nombre o localización, en el caso de los URI nos pueden llevar a un URL para saber
+el mecanismo principal de acceso al recurso nombrado.
+
+\item{URL: Localizador de recurso uniforme}
+Permite localizar a un recurso dado por un URI mediante su mecanismo principal de localización llamado query con el cual se solicita , a decir, nos lleva al recurso en cuestión pudiendo describir
+su ubicación desde un contexto absoluto o relativo (entre otras opciones) al contexto donde se esta buscando.
+
+Su estructura esta dada por la forma normal Backus-Naur descrita en el RFC 2141 "URN Syntax".
+
+
+\end{enumerate}
+
+
+
+
+\section{Conclusiones}
+Los identificadores uniformes nos permite normalizar el acceso a la información, entidades y recursos pertinentes al sistema, pudiendo así usarlos
+para poder definir valores permitidos dentro de nuestras aplicaciones web, como facilitar contenido a los usuarios, facilitando manejo de peticiones o incluso
+prohibiendo el acceso a recursos no autorizados.
+\end{document}
